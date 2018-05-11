@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>listado de clientes</ion-title>
+    <ion-buttons end> <!-- end es un atributo -->
+      <button ion-button icon-only
+              (click)="crearCliente()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card text-center *ngFor="let cliente of clientes">
+    <ion-card-header text-wrap>
+      <!-- text-wrap para que se ajuste el texto a la cabecera -->
+      <h2>{{cliente.nombre}}</h2>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
