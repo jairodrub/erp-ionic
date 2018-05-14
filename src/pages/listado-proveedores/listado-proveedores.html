@@ -1,31 +1,31 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Listado de clientes</ion-title>
+    <ion-title>Listado de proveedores</ion-title>
     <ion-buttons end> <!-- end es un atributo -->
       <button ion-button icon-only
-              (click)="crearCliente()">
+              (click)="crearProveedor()">
         <ion-icon name="add-circle"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-card text-center *ngFor="let cliente of clientes">
+  <ion-card text-center *ngFor="let proveedor of proveedores">
     <ion-card-header text-wrap>
       <!-- text-wrap para que se ajuste el texto a la cabecera -->
-      <h2>{{cliente.nombre}}</h2>
+      <h2>{{proveedor.nombre}}</h2>
     </ion-card-header>
     <ion-card-content>
       <button ion-button icon-only
-              (click)="verCliente(cliente)">
+              (click)="verProveedor(proveedor)">
         <ion-icon name="eye"></ion-icon>
       </button>
       <button ion-button icon-only color="secondary"
-              (click)="editarCliente(cliente)">
+              (click)="editarProveedor(proveedor)">
         <ion-icon name="create"></ion-icon>
       </button>
       <button ion-button icon-only color="danger"
-              (click)="eliminarCliente(cliente._id)">
+              (click)="eliminarProveedor(proveedor._id)">
         <ion-icon name="trash"></ion-icon>
       </button>
     </ion-card-content>

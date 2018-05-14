@@ -4,10 +4,12 @@ import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
-  selector: 'page-crear-cliente',
-  templateUrl: 'crear-cliente.html',
+  selector: 'page-editar-cliente',
+  templateUrl: 'editar-cliente.html',
 })
-export class CrearClientePage {
+export class EditarClientePage { // Cuando esto se cargue...
+
+  cliente:any;
 
   provincias:string[] = [ // Lo cogemos del otro erp
     'Alava','Albacete','Alicante','Almería','Asturias','Avila','Badajoz','Barcelona','Burgos','Cáceres',
@@ -17,53 +19,41 @@ export class CrearClientePage {
     'Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya','Zamora','Zaragoza'
   ]
 
-  cliente:any = {
-    nombre: null,
-    cif: null,
-    domicilio: null,
-    cp: null,
-    localidad: null,
-    provincia: null,
-    telefono: null,
-    email: null,
-    contacto: null
-  }
-
-  constructor(public navCtrl: NavController,
+  constructor(public navCtrl: NavController, // En estos casos es público, al contrario que en
+                                              // Angular normal
               public navParams: NavParams,
               public http: HttpClient,
               public viewController: ViewController) {
+                this.cliente = navParams.get('cliente');
   }
 
-  ionViewDidLoad() {
+  modificarCliente(){
 
-  }
-
-  crearCliente(){
     let cliente = {
+      id: this.cliente._id, // Tiene que ser _id porque si no no lo pilla
       nombre: this.cliente.nombre,
       cif: this.cliente.cif,
       domicilio: this.cliente.domicilio,
       cp: this.cliente.cp,
       localidad: this.cliente.localidad,
       provincia: this.cliente.provincia,
-      telefono: this.cliente.telefono,
       email: this.cliente.email,
-      contacto: this.cliente.contacto, 
+      telefono: this.cliente.telefono,
+      contacto: this.cliente.contacto,
+      
     }
-    
-    this.http.post('http://localhost:3000/cliente', cliente)
-             .subscribe(()=>{
-              // this.viewController.dismiss(cliente) // Destruye la página
-              this.viewController.dismiss(); // No necesitamos parámetro porque carga directamente
-             },(error)=>{
-               console.log(error)
-             })
 
+    this.http.put('http://localhost:3000/cliente'+ cliente.id, cliente)
+    // Protesta porque tenemos que enviarle la url y luego cliente
+                  .subscribe((resp:any)=>{
+
+                  },(error)=>{
+                    console.log(error);
+                  })
   }
 
   cancelar(){
-    this.viewController.dismiss(); // Para que pase de una página a otra y se cancele bien
+    this.viewController.dismiss();
   }
 
 }

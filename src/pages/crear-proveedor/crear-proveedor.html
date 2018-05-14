@@ -1,6 +1,6 @@
 <ion-header>
 <ion-toolbar>
-  <h3 padding>Nuevo cliente</h3>
+  <h3 padding>Nuevo proveedor</h3>
   <ion-buttons end>
     <button ion-button icon-only
             (click)="cancelar()">
@@ -10,41 +10,41 @@
 </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <form (ngSubmit)="crearCliente()">
+  <form (ngSubmit)="crearProveedor()">
     <ion-item text-wrap>
       <ion-label stacked>Nombre</ion-label>
       <ion-input type="text" name="nombre"
-                 [(ngModel)]="cliente.nombre">
+                 [(ngModel)]="proveedor.nombre">
       </ion-input>
       <!-- web-component con input dentro, por eso tiene cierre -->
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>CIF</ion-label>
       <ion-input type="text" name="cif"
-                  [(ngModel)]="cliente.cif">
+                  [(ngModel)]="proveedor.cif">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Domicilio</ion-label>
       <ion-input type="text" name="domicilio"
-                  [(ngModel)]="cliente.domicilio">
+                  [(ngModel)]="proveedor.domicilio">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Código postal</ion-label>
       <ion-input type="number" name="cp"
-                  [(ngModel)]="cliente.cp">
+                  [(ngModel)]="proveedor.cp">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Localidad</ion-label>
       <ion-input type="text" name="localidad"
-                  [(ngModel)]="cliente.localidad">
+                  [(ngModel)]="proveedor.localidad">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Provincia</ion-label>
-      <ion-select name="provincia" [(ngModel)]="cliente.provincia">
+      <ion-select name="provincia" [(ngModel)]="proveedor.provincia">
         <ion-option *ngFor="let provincia of provincias"
                     [value]="provincia">
           {{provincia}}
@@ -54,24 +54,24 @@
     <ion-item text-wrap>
       <ion-label stacked>Teléfono</ion-label>
       <ion-input type="text" name="telefono"
-                  [(ngModel)]="cliente.telefono">
+                  [(ngModel)]="proveedor.telefono">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Correo Electrónico</ion-label>
       <ion-input type="text" name="email"
-                  [(ngModel)]="cliente.email">
+                  [(ngModel)]="proveedor.email">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Contacto</ion-label>
       <ion-input type="text" name="contacto"
-                  [(ngModel)]="cliente.contacto">
+                  [(ngModel)]="proveedor.contacto">
       </ion-input>
     </ion-item>
     <div class="text-center">
       <button ion-button type="submit">
-        Crear cliente
+        Crear proveedor
       </button>
     </div>
   </form>

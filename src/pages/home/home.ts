@@ -17,4 +17,8 @@ export class HomePage {
     this.navCtrl.push('VentasPage');
   }
 
+  goToCompras(){
+    this.navCtrl.push('ComprasPage');
+  }
+
 }

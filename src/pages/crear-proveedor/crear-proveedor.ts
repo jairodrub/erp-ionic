@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
-  selector: 'page-crear-cliente',
-  templateUrl: 'crear-cliente.html',
+  selector: 'page-crear-proveedor',
+  templateUrl: 'crear-proveedor.html',
 })
-export class CrearClientePage {
+export class CrearProveedorPage {
 
   provincias:string[] = [ // Lo cogemos del otro erp
     'Alava','Albacete','Alicante','Almería','Asturias','Avila','Badajoz','Barcelona','Burgos','Cáceres',
@@ -17,7 +17,7 @@ export class CrearClientePage {
     'Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya','Zamora','Zaragoza'
   ]
 
-  cliente:any = {
+  proveedor:any = {
     nombre: null,
     cif: null,
     domicilio: null,
@@ -29,7 +29,7 @@ export class CrearClientePage {
     contacto: null
   }
 
-  constructor(public navCtrl: NavController,
+  constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public http: HttpClient,
               public viewController: ViewController) {
@@ -39,22 +39,22 @@ export class CrearClientePage {
 
   }
 
-  crearCliente(){
-    let cliente = {
-      nombre: this.cliente.nombre,
-      cif: this.cliente.cif,
-      domicilio: this.cliente.domicilio,
-      cp: this.cliente.cp,
-      localidad: this.cliente.localidad,
-      provincia: this.cliente.provincia,
-      telefono: this.cliente.telefono,
-      email: this.cliente.email,
-      contacto: this.cliente.contacto, 
+  crearProveedor(){
+    let proveedor = {
+      nombre: this.proveedor.nombre,
+      cif: this.proveedor.cif,
+      domicilio: this.proveedor.domicilio,
+      cp: this.proveedor.cp,
+      localidad: this.proveedor.localidad,
+      provincia: this.proveedor.provincia,
+      telefono: this.proveedor.telefono,
+      email: this.proveedor.email,
+      contacto: this.proveedor.contacto, 
     }
     
-    this.http.post('http://localhost:3000/cliente', cliente)
+    this.http.post('http://localhost:3000/proveedor', proveedor)
              .subscribe(()=>{
-              // this.viewController.dismiss(cliente) // Destruye la página
+              // this.viewController.dismiss(proveedor) // Destruye la página
               this.viewController.dismiss(); // No necesitamos parámetro porque carga directamente
              },(error)=>{
                console.log(error)

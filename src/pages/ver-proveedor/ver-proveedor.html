@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Visualizar {{proveedor.nombre}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list> <!-- Para hacer una lista -->
+    <ion-item text-wrap>
+      <p>Nombre: {{proveedor.nombre}}</p> <!-- {{}} = Interpolación -->
+    </ion-item>
+    <ion-item text-wrap>
+      <p>CIF: {{proveedor.cif}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Domicilio: {{proveedor.domicilio}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Código Postal: {{proveedor.cp}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Localidad: {{proveedor.localidad}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Provincia: {{proveedor.provincia}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Teléfono: {{proveedor.telefono}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Email: {{proveedor.email}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <p>Contacto: {{proveedor.contacto}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
