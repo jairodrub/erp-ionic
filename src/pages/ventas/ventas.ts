@@ -19,4 +19,8 @@ export class VentasPage {
     this.navCtrl.push("ListadoClientesPage"); // Viene en el ts de listado-clientes
   }
 
+  goToArticulos(){
+    this.navCtrl.push("ListadoArticulosPage"); // Viene en el ts de listado-articulos
+  }
+
 }

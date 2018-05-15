@@ -1,18 +1,78 @@
-<!--
-  Generated template for the EditarProveedorPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>editarProveedor</ion-title>
-  </ion-navbar>
-
+<ion-toolbar>
+  <h3 padding>Modificar proveedor</h3>
+  <ion-buttons end>
+    <button ion-button icon-only
+            (click)="cancelar()">
+      <ion-icon name="close-circle"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
 </ion-header>
-
-
 <ion-content padding>
-
+  <form (ngSubmit)="modificarProveedor()">
+    <ion-item text-wrap>
+      <ion-label stacked>Nombre</ion-label>
+      <ion-input type="text" name="nombre"
+                 [(ngModel)]="proveedor.nombre">
+      </ion-input>
+      <!-- web-component con input dentro, por eso tiene cierre -->
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>CIF</ion-label>
+      <ion-input type="text" name="cif"
+                  [(ngModel)]="proveedor.cif">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Domicilio</ion-label>
+      <ion-input type="text" name="domicilio"
+                  [(ngModel)]="proveedor.domicilio">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Código postal</ion-label>
+      <ion-input type="number" name="cp"
+                  [(ngModel)]="proveedor.cp">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Localidad</ion-label>
+      <ion-input type="text" name="localidad"
+                  [(ngModel)]="proveedor.localidad">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Provincia</ion-label>
+      <ion-select name="provincia" [(ngModel)]="proveedor.provincia">
+        <ion-option *ngFor="let provincia of provincias"
+                    [value]="provincia">
+          {{provincia}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Teléfono</ion-label>
+      <ion-input type="text" name="telefono"
+                  [(ngModel)]="proveedor.telefono">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Correo Electrónico</ion-label>
+      <ion-input type="text" name="email"
+                  [(ngModel)]="proveedor.email">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Contacto</ion-label>
+      <ion-input type="text" name="contacto"
+                  [(ngModel)]="proveedor.contacto">
+      </ion-input>
+    </ion-item>
+    <div class="text-center">
+      <button ion-button type="submit">
+        Guardar cambios
+      </button>
+    </div>
+  </form>
 </ion-content>

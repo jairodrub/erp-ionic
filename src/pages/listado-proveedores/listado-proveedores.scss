@@ -1,3 +1,22 @@
 page-listado-proveedores {
 
+    .paginacion {
+        margin: 5px 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .paginacion button {
+        margin: 0 2px;
+    }
+    
+    .paginacion button:active {
+        color:red;
+        background-color: black;
+    }
+
+    .oculto {
+        visibility: hidden;
+    }
+
 }

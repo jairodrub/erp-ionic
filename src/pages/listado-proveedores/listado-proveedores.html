@@ -30,4 +30,36 @@
       </button>
     </ion-card-content>
   </ion-card>
+
+<ion-card>
+  <div class="paginacion">
+    
+    <div *ngFor="let boton of botones">
+      <button *ngIf="boton <= ( numeroBotones + 1 )" 
+            ion-button 
+            [ngClass]="{'btn-outline-info': boton -1 === desde / 5}"
+            (click)="updateDesde(boton*5-5)">
+              {{boton}}
+      </button>
+    </div>
+    <!-- No puede haber un *ngFor y un *ngIf en la misma -->
+    
+  </div>
+</ion-card>
+<ion-card>
+<div class="paginacion">
+  <button ion-button
+      [ngClass]="{'oculto': desde < 25}" 
+      (click)="retrocederTramoBotones()">
+      <ion-icon name="skip-backward"></ion-icon>
+    </button>
+    
+    <button ion-button
+      [ngClass]="{'oculto': desde >= (totales - 25)}" 
+      (click)="avanzarTramoBotones()">
+      <ion-icon name="skip-forward"></ion-icon>
+    </button>
+</div>
+</ion-card>
+
 </ion-content>

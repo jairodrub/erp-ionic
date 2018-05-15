@@ -14,9 +14,8 @@
     <ion-item text-wrap>
       <ion-label stacked>Nombre</ion-label>
       <ion-input type="text" name="nombre"
-                 [(ngModel)]="cliente.nombre">
+                  [(ngModel)]="cliente.nombre">
       </ion-input>
-      <!-- web-component con input dentro, por eso tiene cierre -->
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>CIF</ion-label>
@@ -44,7 +43,8 @@
     </ion-item>
     <ion-item text-wrap>
       <ion-label stacked>Provincia</ion-label>
-      <ion-select name="provincia" [(ngModel)]="cliente.provincia">
+      <ion-select name="provincia" 
+                  [(ngModel)]="cliente.provincia">
         <ion-option *ngFor="let provincia of provincias"
                     [value]="provincia">
           {{provincia}}
@@ -64,12 +64,12 @@
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label stacked>Contacto</ion-label>
+      <ion-label stacked>Persona contacto</ion-label>
       <ion-input type="text" name="contacto"
                   [(ngModel)]="cliente.contacto">
       </ion-input>
     </ion-item>
-    <div class="text-center">
+    <div text-center>
       <button ion-button type="submit">
         Guardar cambios
       </button>

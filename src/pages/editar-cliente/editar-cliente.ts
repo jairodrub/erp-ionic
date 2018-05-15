@@ -43,10 +43,10 @@ export class EditarClientePage { // Cuando esto se cargue...
       
     }
 
-    this.http.put('http://localhost:3000/cliente'+ cliente.id, cliente)
+    this.http.put('http://localhost:3000/cliente/'+ cliente.id, cliente)
     // Protesta porque tenemos que enviarle la url y luego cliente
                   .subscribe((resp:any)=>{
-
+                    this.viewController.dismiss();
                   },(error)=>{
                     console.log(error);
                   })

@@ -1,6 +1,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Ventas</ion-title>
   </ion-navbar>
 
@@ -9,10 +12,18 @@
 
 <ion-content padding>
     <div text-center>
-        <button ion-button
-                (click)="goToClientes()">
-          <ion-icon name="people"></ion-icon>
-          &nbsp; Clientes
-        </button>
-      </div>
+      <button ion-button
+              (click)="goToClientes()">
+        <ion-icon name="people"></ion-icon>
+        &nbsp; Clientes
+      </button>
+    </div>
+    <div text-center>
+      <button ion-button
+              (click)="goToArticulos()">
+        <ion-icon name="people"></ion-icon>
+        &nbsp; Artículos
+      </button>
+    </div>
 </ion-content>
+
